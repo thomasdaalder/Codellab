@@ -5,9 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
-const Sequelize = require('sequelize');
+var session = require('express-session');
+var flash = require('connect-flash');
 
 var index = require('./routes/index');
+var userRoutes = require('./routes/user');
 
 var app = express();
 
@@ -21,8 +23,16 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session(
+  {secret: 'thisisasupersecretkey',
+  resave: false,
+  saveUninitialized: false
+}));
+app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Routes
+app.use('/user', userRoutes);
 app.use('/', index);
 
 // catch 404 and forward to error handler

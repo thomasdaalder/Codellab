@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Sign Up</h1>
+        <form action="/user/signup" method="post">
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="text" id="email" name="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="email">Username</label>
+                <input type="text" id="username" name="username" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="email">Password</label>
+                <input type="password" id="password" name="password" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="sel1">What kind of developer are you now </label>
+              <select class="form-control" id="accounttype">
+                <option>Student</option>
+                <option>Junior Developer</option>
+                <option>Medior Developer</option>
+                <option>Senior Developer</option>
+                <option>Non Developer</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign up</button>
+        </form>
+    </div>
+</div>
