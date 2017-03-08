@@ -7,6 +7,9 @@ var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var session = require('express-session');
 var flash = require('connect-flash');
+var pg = require('pg');
+var db = require(__dirname + '/models/db.js');
+var bcrypt = require('bcrypt');
 
 var index = require('./routes/index');
 var userRoutes = require('./routes/user');
