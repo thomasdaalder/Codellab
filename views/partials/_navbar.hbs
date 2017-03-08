@@ -1,3 +1,5 @@
+
+
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -18,9 +20,14 @@
 
       </form>
       <ul class="nav navbar-nav navbar-right">
+      {{# if user}}
+      <li><a href="/user/profile">Profile</a></li>
+      <li><a href="/user/logout">Log out</a></li>
+      {{else}}
         <li><a href="/user/signin">Sign In</a></li>
         <li><a href="/user/signup">Sign Up</a></li>
       </ul>
+      {{/if}}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
