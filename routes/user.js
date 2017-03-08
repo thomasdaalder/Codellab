@@ -70,7 +70,17 @@ router.post('/signin', bodyParser.urlencoded({extended: true}), function (req, r
         else {
           res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
         }
-    })
+    });
+  });
+});
+
+// Logout user
+router.get('/logout', function (req, res) {
+  req.session.destroy(function (error) {
+    if(error) {
+        throw error;
+    }
+      res.redirect( '/?message=' + encodeURIComponent("Succesfully logged out.") );
   })
 })
 
