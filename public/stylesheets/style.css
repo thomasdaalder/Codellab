@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
+
 body {
   padding: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 a {
@@ -10,8 +12,8 @@ a {
 /*video*/
 video#bgvid {
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 30%;
+    left: 30%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -21,12 +23,11 @@ video#bgvid {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    background: url(polina.jpg) no-repeat;
     background-size: cover;
 }
 /*navbar*/
 .navbar-default {
-     background-color:transparent !important;
+     background-color:transparent!important;
      border-color:transparent!important;
      background-image:none!important;
      box-shadow:none!important;
@@ -35,6 +36,14 @@ video#bgvid {
 .navbar-default .navbar-nav>li>a {
    font-size:15px;
    color:#fff;
+}
+
+.navbar-default .navbar-nav span{
+  color: #00FF94!important;
+}
+
+.navbar-default .navbar-nav li a{
+  color: black!important;
 }
 
 /*navbar logo*/
@@ -48,14 +57,27 @@ video#bgvid {
 .text{
   text-align: center;
   color: white;
-
+  text-align: center;
+  display: inline-block;
+  margin: 0 28%;
+  padding-top: 130px;
 }
 
 .titletext{
   font-size: 30px;
+  font-weight: bold;
+  margin: 0;
 
 }
 
 .bodytext{
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+}
+
+/*login en register buttons*/
+
+.signin{
+  margin: 10px 10px 10px 10px;
 }
