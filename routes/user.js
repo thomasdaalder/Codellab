@@ -11,7 +11,7 @@ router.get('/', isLoggedIn, function(req, res) {
 });
 
 // Render user signup form
-router.get('/signup', isLoggedIn, function (req, res) {
+router.get('/signup', function (req, res) {
   res.render('user/signup');
 });
 
@@ -44,7 +44,7 @@ router.post('/signup', function(req, res){
 });
 
 // GET Login Page
-router.get('/signin', isLoggedIn, function (req, res) {
+router.get('/signin', function (req, res) {
   res.render('user/signin');
 });
 
