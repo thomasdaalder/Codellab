@@ -1,5 +1,6 @@
 # Code-Matcher (still in development phase)
-A way for junior developers to get reviewed/mentored by senior developers.
+The place where code and people grow
+Learn, teach, comment, collab or just be inspired by the amazing projects developed all over the world.
 
 # Stack
 * Node.js
