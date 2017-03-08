@@ -5,8 +5,13 @@ var db = require('../models/db.js');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+// Profile Page
+router.get('/', isLoggedIn, function(req, res) {
+	res.render('user/profile', {user: req.session.user});
+});
+
 // Render user signup form
-router.get('/signup', function (req, res) {
+router.get('/signup', isLoggedIn, function (req, res) {
   res.render('user/signup');
 });
 
@@ -39,7 +44,7 @@ router.post('/signup', function(req, res){
 });
 
 // GET Login Page
-router.get('/signin', function (req, res) {
+router.get('/signin', isLoggedIn, function (req, res) {
   res.render('user/signin');
 });
 
@@ -85,3 +90,19 @@ router.get('/logout', function (req, res) {
 })
 
 module.exports = router;
+
+//Custom Middleware for Logged in
+function isLoggedIn(req, res, next) {
+  if (req.session.user) {
+    return next();
+  }
+  res.redirect('/');
+}
+
+// Not Logged In
+function notLoggedIn(req, res, next) {
+  if (!req.session.user) {
+    return next();
+  }
+  res.redirect('/');
+}
