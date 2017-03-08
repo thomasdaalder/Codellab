@@ -6,3 +6,33 @@ body {
 a {
   color: #00B7FF;
 }
+
+/*video*/
+html,
+body,
+div,
+h1,
+p,
+a,
+video {
+  margin: 0;
+  padding: 0;
+}
+/*navbar*/
+.navbar-default {
+     background-color:transparent !important;
+     border-color:transparent!important;
+     background-image:none!important;
+     box-shadow:none!important;
+}
+
+.navbar-default .navbar-nav>li>a {
+   font-size:15px;
+   color:#fff;
+}
+
+/*navbar logo*/
+.navbar-brand img{
+  max-width: 150px;
+  max-height: 150px;
+}
