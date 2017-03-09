@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <h1>Submit Project</h1>
+        <form action="/user/submitproject" method="post">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" class="form-control" placeholder="Project name"required />
+            </div>
+            <div class="form-group">
+                <label for="link">Link to your project</label>
+                <input type="text" id="link" name="link" class="form-control" placeholder="Link to your Github/Gitlab project" required/>
+            </div>
+            <div class="form-group">
+                <label for="email">Description</label>
+                <textarea class="form-control" rows="5" id="description" name="description" placeholder="Give a brief explanation of what your project is all about" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="email">What are you asking from the community?</label>
+                <input type="text" id="question" name="question" class="form-control" placeholder="Feedback / Collaboration / Praise" required/>
+            </div>
+
+            <div class="form-group">
+              <label for="sel1">What language did you use for your project? </label>
+              <select class="form-control" id="language" name="language" required>
+                <option>Javascript</option>
+                <option>Ruby</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>

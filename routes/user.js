@@ -89,6 +89,31 @@ router.get('/logout', function (req, res) {
   })
 })
 
+// Submit project page (GET)
+router.get('/submitproject', function (req, res) {
+	res.render('user/submitproject', {user: req.session.user});
+});
+
+// Submit project (POST)
+router.post('/submitproject', function (req, res) {
+  db.User.findOne({
+     where: {id: req.session.user.id}
+    })
+  .then(function(user) {
+    return user.createProject({
+        title: req.body.title,
+        link: req.body.link,
+        description: req.body.description,
+				question: req.body.question,
+				language: req.body.language,
+				likes: 0
+    })
+  })
+  .then(function() {
+    res.redirect('/');
+  });
+});
+
 module.exports = router;
 
 //Custom Middleware for Logged in
