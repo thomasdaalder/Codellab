@@ -14,32 +14,36 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+  <form class="navbar-form navbar-left">
 
-      <form class="navbar-form navbar-left">
+  {{!-- All content that is on the left --}}
+  </form>
 
-      </form>
-      <ul class="nav navbar-nav navbar-right">
+  {{!-- All content that is on the right --}}
+  <ul class="nav navbar-nav navbar-right">
       {{# if user}}
-      <li>
-      <div class="dropdown">
-      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-        {{user.username}}
-      <span class="caret"></span>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-        <li><a href="/user">Profile</a></li>
-        <li role="separator" class="divider"></li>
-        <li><a href="/user/logout">Log out</a></li>
-      </ul>
-      </div>
-      </li>
 
+      <div class="dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            {{user.username}}
+            <span class="caret"></span>
+          </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="/user/submitproject">Submit Project</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="/user">Profile</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="/user/logout">Log out</a></li>
+        </ul>
+      </div>
+  </ul>
+</div>
 
       {{else}}
-        </div>
-      </ul>
+
       {{/if}}
+
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

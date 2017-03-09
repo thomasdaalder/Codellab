@@ -15,7 +15,7 @@ const User = db.define('user', {
 const Project = db.define('project', {
   title: Sequelize.STRING,
   link: Sequelize.STRING,
-  description: Sequelize.STRING(1000),
+  description: Sequelize.STRING(1200),
   question: Sequelize.STRING,
   language: Sequelize.STRING,
   likes: Sequelize.INTEGER
