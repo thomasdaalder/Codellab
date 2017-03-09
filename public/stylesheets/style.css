@@ -81,3 +81,11 @@ video#bgvid {
 .signin{
   margin: 10px 10px 10px 10px;
 }
+
+/*dropdown button*/
+
+.dropdown .btn{
+  background-color:transparent!important;
+  border-color:transparent!important;
+
+}

@@ -21,8 +21,21 @@
       </form>
       <ul class="nav navbar-nav navbar-right">
       {{# if user}}
-      <li><a href="/user">Profile</a></li>
-      <li><a href="/user/logout">Log out</a></li>
+      <li>
+      <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        {{user.username}}
+      <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="/user">Profile</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="/user/logout">Log out</a></li>
+      </ul>
+      </div>
+      </li>
+
+
       {{else}}
         </div>
       </ul>
