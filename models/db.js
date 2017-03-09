@@ -13,7 +13,7 @@ const User = db.define('user', {
 
 // Defining project model
 const Project = db.define('project', {
-  title: Sequelize.STRING,
+  title: {type: Sequelize.STRING, unique: true},
   link: Sequelize.STRING,
   description: Sequelize.STRING(1200),
   question: Sequelize.STRING,
