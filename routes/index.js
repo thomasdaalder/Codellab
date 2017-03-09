@@ -6,7 +6,16 @@ var session = require('express-session');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Code Matcher', user: req.session.user });
+  // res.render('index', { title: 'Code Matcher', user: req.session.user });
+  db.Project.findAll()
+  .then((allProjects) => {
+    res.render('index',
+    {projectList: allProjects,
+    user: req.session.user
+    })
+  })
 });
+
+
 
 module.exports = router;
