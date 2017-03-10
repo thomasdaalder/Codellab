@@ -12,22 +12,26 @@
 <!-- project card -->
 
 {{!-- Need two for each loops here --}}
-<div class="row">
-  {{# each projectList}}
-  <div class="col-md-4 col-lg-3">
-    <div class="thumbnail">
-      <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
-      <div class="caption">
-        <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
-        <p>{{this.description}}</p>
-        <p>{{user.accounttype}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a>
+{{!-- Loop count 3 and create new loop --}}
+<div class="container-fluid">
+
+  <div class="row">
+    {{# each allProjects}}
+    <div class="col-md-3">
+      <div class="thumbnail">
+        <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
+        <div class="caption">
+          <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
+          <p>{{this.description}}</p>
+          <p>{{user.accounttype}}</p>
+          <p><a href="#" class="btn btn-primary" role="button">Button</a>
+        </div>
       </div>
     </div>
+    {{/each}}
   </div>
-  {{/each}}
+  
 </div>
-
 
 
 {{else}}

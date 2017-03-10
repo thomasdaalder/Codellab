@@ -10,12 +10,10 @@ router.get('/', function(req, res, next) {
   db.Project.findAll()
   .then((allProjects) => {
     res.render('index',
-    {projectList: allProjects,
+    {allProjects: allProjects,
     user: req.session.user
     })
   })
 });
-
-
 
 module.exports = router;
