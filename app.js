@@ -14,6 +14,7 @@ var bcrypt = require('bcrypt');
 var index = require('./routes/index');
 var userRoutes = require('./routes/user');
 var project = require('./routes/grabProject');
+var profile = require('./routes/grabProfile');
 
 var app = express();
 
@@ -39,6 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/user', userRoutes);
 app.use('/', index);
 app.use('/project', project);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
