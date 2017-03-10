@@ -11,9 +11,9 @@
 
 <!-- project card -->
 
-
-{{# each projectList}}
+{{!-- Need two for each loops here --}}
 <div class="row">
+  {{# each projectList}}
   <div class="col-md-4 col-lg-3">
     <div class="thumbnail">
       <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
@@ -25,9 +25,10 @@
       </div>
     </div>
   </div>
+  {{/each}}
 </div>
 
-{{/each}}
+
 
 {{else}}
 
