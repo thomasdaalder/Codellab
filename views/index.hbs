@@ -13,22 +13,25 @@
 
 {{!-- Need two for each loops here --}}
 <div class="row">
+
   {{# each projectList}}
-  <div class="col-md-4 col-lg-3">
+<a href='/project/{{this.title}}' class="projectlink">
+  <div class="col-md-4 col-lg-4">
     <div class="thumbnail">
+      <div class="color-block"><p>{{this.language}}{{this.user.username}} </p></div>
       <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
       <div class="caption">
         <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
         <p>{{this.description}}</p>
-        <p>{{user.accounttype}}</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a>
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
+      </button>
       </div>
     </div>
   </div>
+</a>
+
   {{/each}}
 </div>
-
-
 
 {{else}}
 

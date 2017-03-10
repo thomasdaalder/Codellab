@@ -7,15 +7,14 @@ var session = require('express-session');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   // res.render('index', { title: 'Code Matcher', user: req.session.user });
-  db.Project.findAll()
+  db.Project.findAll({ include: [ db.User ] })
   .then((allProjects) => {
     res.render('index',
-    {projectList: allProjects,
-    user: req.session.user
+    {
+      projectList: allProjects,
+      user: req.session.user
     })
   })
 });
-
-
 
 module.exports = router;
