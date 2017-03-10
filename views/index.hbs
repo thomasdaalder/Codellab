@@ -14,7 +14,7 @@
 {{!-- Need two for each loops here --}}
 <div class="row">
 
-  {{# each projectList}}
+  {{# each allProjects}}
 <a href='/project/{{this.title}}' class="projectlink">
   <div class="col-md-4 col-lg-4">
     <div class="thumbnail">
@@ -27,6 +27,7 @@
       </button>
       </div>
     </div>
+    {{/each}}
   </div>
 </a>
 

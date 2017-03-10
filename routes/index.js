@@ -10,9 +10,8 @@ router.get('/', function(req, res, next) {
   db.Project.findAll({ include: [ db.User ] })
   .then((allProjects) => {
     res.render('index',
-    {
-      projectList: allProjects,
-      user: req.session.user
+    {allProjects: allProjects,
+    user: req.session.user
     })
   })
 });
