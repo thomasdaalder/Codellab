@@ -5,8 +5,8 @@ const db = new Sequelize(connectionString);
 
 // Defining users model
 const User = db.define('user', {
-  email: Sequelize.STRING,
-  username: Sequelize.STRING,
+  email: {type: Sequelize.STRING, unique: true},
+  username: {type: Sequelize.STRING, unique: true},
   password: Sequelize.STRING,
   accounttype: Sequelize.STRING
 })
