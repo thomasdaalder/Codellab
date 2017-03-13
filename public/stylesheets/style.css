@@ -1,4 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:300,400,400i,700');
+/*jquery animation*/
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+/*end of jquery animation*/
 
 body {
   font-family: 'Lato', sans-serif;
@@ -12,6 +36,7 @@ a {
 h1{
   font-weight: 300;
 }
+
 /*video*/
 video#bgvid {
     position: fixed;
@@ -27,6 +52,32 @@ video#bgvid {
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     background-size: cover;
+}
+
+/*header image*/
+.headerimage{
+  max-width: 100%;
+  position: relative;
+  top: -20px;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.wrap{
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  color: white;
+  padding-bottom: 10px;
+  padding-top: 50px;
+}
+
+.headerbutton{
+  position: relative;
+  text-align: center;
+  margin: 15px;
 }
 /*navbar*/
 .navbar-default {
@@ -73,9 +124,10 @@ video#bgvid {
 .square {
 	width: 100%;
 	height: 100px;
-	background-color: #979797;
+	background-color: #282C34;
   padding-top: -10px;
   margin-top: -20px;
+  text-align: center;
 }
 
 .square h3{
@@ -91,6 +143,7 @@ video#bgvid {
   font-weight: 300;
   font-size: 20px;
   color: white;
+  padding-top: 10px;
 }
 
 .upload{

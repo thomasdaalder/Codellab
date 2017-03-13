@@ -16,6 +16,7 @@
     "express-session": "^1.15.1",
     "handlebars-helpers": "^0.8.0",
     "hbs": "~4.0.1",
+    "jquery": "^3.1.1",
     "mongoose": "^4.8.6",
     "morgan": "~1.7.0",
     "pg": "^6.1.3",
