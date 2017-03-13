@@ -97,6 +97,8 @@ video#bgvid {
   display: grid;
 }
 /*Project cards*/
+
+
 .thumbnail-project{
   border-radius: 5px 5px 4px 4px;
   border-color: transparent!important;
