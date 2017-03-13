@@ -4,8 +4,6 @@
 <div class="square">
   <h3>What are you working on?</h3>
   <span class="para">Upload your project and get feedback, love, help or inspiration.</span>
-    <button type="button" class="upload btn btn-primary">Upload</button>
-    <button type="button" class="browse btn btn-primary">Browse</button>
 </div>
 <div class="another-square"><input type="text" class="search" placeholder="Search"></div>
 
@@ -17,14 +15,16 @@
     {{#each this }}
     <a href='/project/{{this.title}}' class="projectlink">
       <div class="col-md-4 col-lg-4">
-        <div class="thumbnail">
-          <div class="color-block"><p>{{this.language}}{{this.user.username}} </p></div>
-          <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
-          <div class="caption">
+        <div class="thumbnail-project">
+          <div class="color-block">
             <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
-            <p>{{this.description}}</p>
+            <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
+          <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
+          <div class="caption-project">
+            <h5>{{this.description}}</h5>
             <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
-          </button>
+            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
           </div>
         </div>
       </div>
@@ -33,6 +33,7 @@
     </div>
 {{/grouped_each}}
 </div>
+
 
 {{else}}
 

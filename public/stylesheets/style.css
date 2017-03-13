@@ -9,6 +9,9 @@ a {
   color: #00B7FF;
 }
 
+h1{
+  font-weight: 300;
+}
 /*video*/
 video#bgvid {
     position: fixed;
@@ -33,6 +36,15 @@ video#bgvid {
      box-shadow:none!important;
 }
 
+.navbar-default{
+     background-color:#282C34!important;
+     border-color:#282C34!important;
+     background-image:none!important;
+     box-shadow:none!important;
+     border-radius:0!important;
+
+}
+
 .navbar-default .navbar-nav>li>a {
    font-size:15px;
    color:#fff;
@@ -50,7 +62,11 @@ video#bgvid {
 .navbar-brand img{
   max-width: 150px;
   max-height: 150px;
-  pointer-events: none
+  pointer-events: none;
+}
+
+.navbar-brand{
+  float:none!important;
 }
 
 /*Grey bar beneath navbar*/
@@ -58,6 +74,8 @@ video#bgvid {
 	width: 100%;
 	height: 100px;
 	background-color: #979797;
+  padding-top: -10px;
+  margin-top: -20px;
 }
 
 .square h3{
@@ -71,7 +89,6 @@ video#bgvid {
 .para{
   padding-left: 20px;
   font-weight: 300;
-  margin: 0;
   font-size: 20px;
   color: white;
 }
@@ -80,14 +97,13 @@ video#bgvid {
   display: grid;
 }
 /*Project cards*/
-.thumbnail{
+.thumbnail-project{
   border-radius: 5px 5px 4px 4px;
   border-color: transparent!important;
   background-color: white;
   margin: 50px;
   padding: 0;
   border: 0;
-
 }
 .row{
   margin:0;
@@ -104,10 +120,9 @@ video#bgvid {
   padding-top: 15px;
   padding-left: 10px;
   color: white;
-  font-weight: italic;
 }
 
-.thumbnail a{
+.thumbnail-project a{
   color: black;
   text-decoration: none;
   font-weight: bold;
@@ -118,10 +133,45 @@ video#bgvid {
   display: block;
 }
 
-.thumbnail h3{
-  color: black;
+.thumbnail-project h3{
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+}
+
+.thumbnail-project h5{
+  margin: 10px;
+  margin-top: 20px;
+  display: block;
+  display: -webkit-box;
+  max-width: 400px;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.625;
+  text-overflow: ellipsis;
+}
+
+.thumbnail-project h5{
+  font-size: 11px;
+
+}
+
+.thumbnail-project span{
+  margin: 10px;
+}
+
+.caption-project h5 {
+  font-weight: 300;
+  font-size: 20px;
   color: #717b85;
 }
 
@@ -171,9 +221,181 @@ video#bgvid {
 .dropdown .btn{
   background-color:transparent!important;
   border-color:transparent!important;
+  float: right;
+  white-space:normal;
+  margin-top: 20px;
+  color: white;
 }
 
-.dropdown .btn:focus,.btn:active {
+.dropdown-menu{
+  margin: 50px 10px 0px 0px;
+}
+
+.dropdown .btn:focus,.btn :active {
    outline: none !important;
    border:none !important;
+   color: white;
+}
+
+.btn .btn-default .dropdown-toggle{
+  padding-top: 50px;
+  color: white;
+}
+
+.btn-default.active, .btn-default:active, .open>.dropdown-toggle.btn-default{
+  color: white!important;
+}
+/*project page*/
+
+.thumbnail{
+  border-radius: 5px 5px 4px 4px;
+  border-color: transparent!important;
+  background-color: white;
+  margin: 50px;
+  padding: 0;
+  border: 0;
+  text-align: center;
+}
+.row{
+  margin:0;
+}
+.color-block{
+  height: 50px;
+  width: inherit;
+  background-color:#596d82;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.color-block p{
+  padding-top: 15px;
+  padding-left: 10px;
+  color: white;
+}
+
+.thumbnail a{
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  color: #717b85;
+}
+
+.projectlink {
+  display: block;
+}
+
+.thumbnail h3{
+  text-decoration: none;
+  font-weight: bold;
+  color: white;
+  padding-left: 10px;
+  padding-top: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  max-width: 100%;
+}
+
+.thumbnail h5{
+  margin: 10px;
+  margin-top: 20px;
+  text-align: center;
+  max-width: 100%;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.625;
+  text-overflow: ellipsis;
+
+}
+
+.thumbnail span{
+  margin: 10px;
+}
+
+.caption h5 {
+  font-weight: 300;
+  font-size: 20px;
+  color: #717b85;
+  text-align: center;
+}
+
+.container-fluid{
+  padding-left: 65px;
+  padding-right: 65px;
+}
+
+/*signup page*/
+
+.signupform p{
+  text-align: center;
+  color: #596d82;
+  font-weight: 300;
+}
+
+.signupform h1{
+  text-align: center;
+  color: #596d82;
+}
+
+.signupform label{
+  color: #596d82;
+  font-weight: 300;
+}
+
+.signupform select{
+  color: #596d82;
+  font-weight: 300;
+}
+
+.signupform h3{
+  color: #596d82;
+  font-weight: 300;
+  text-align: center;
+  font-size: 20px;
+}
+
+/*signup button */
+
+.signupbutton{
+  text-align: center;
+  background-color:#00FF94;
+  border-color: transparent!important;
+  margin-left: 160px;
+}
+
+.signupbutton:hover{
+  background-color: #00FF94;
+}
+
+/*signin button*/
+
+.signinbutton{
+  text-align: center;
+  background-color:#00FF94;
+  border-color: transparent!important;
+  margin-left: 160px;
+}
+
+.signinbutton:hover{
+  background-color: #00FF94;
+}
+
+.commentbutton{
+  background-color:#00FF94;
+  border-color: transparent!important;
+  margin-bottom: 50px;
+}
+
+.commentbutton:hover{
+  background-color: #00FF94;
+}
+
+.container-fluid h3{
+  color: #596d82;
+}
+
+.container-fluid p{
+  color: #596d82;
 }

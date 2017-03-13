@@ -1,34 +1,45 @@
 {{#if user}}
+<a href='/project/{{this.title}}' class="projectlink"></a>
+  <div class="col-md-12 col-lg-12 project">
+    <div class="thumbnail">
+      <div class="color-block">
+        <h3>{{Project.title}}</h3>
+        <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
+      <!-- <img src="/img/profile.jpg" class="" alt="..."> -->
+      <div class="caption">
+        <h5>{{Project.description}}</h5>
+        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{Project.likes}}
+        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{Project.language}}
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+        <span class="fa fa-github" aria-hidden="true"></span><a href={{Project.link}} target="_blank">{{Project.link}}</a>
+        <p>{{Project.question}}</p>
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        </button>
 
-<div class="container-fluid">
-  <h1>{{Project.title}}</h1>
-  <p>{{Project.description}}</p>
-  <p>{{Project.language}}</p>
-  <p>{{Project.question}}</p>
-  <p>{{Project.link}}</p>
-  <p>Amount of likes: {{Project.likes}}</p>
-  <button type="button" class="btn btn-default btn-sm">
-    <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Star
-  </button>
-</div>
+      </div>
+    </div>
+  </div>
 
 <div class="container-fluid">
   <h3>Comments about this project</h3>
+
   {{#each Project.comments}}
     <p><strong>{{this.username}}</strong></p>
     <p>{{this.comment}}</p>
   {{/each}}
+
 </div>
 
 <div class="container-fluid">
-  <h1>Leave a comment</h1>
-  <p>Logged in as: <strong>{{user.username}}</strong></p>
+  <h3>Leave a comment</h3>
+  <!-- <p>Logged in as: <strong>{{user.username}}</strong></p> -->
   <form action="/project/{{paramsID}}" method="post">
       <div class="form-group">
-          <label for="comment">Comment</label>
+          <!-- <label for="comment">Comment</label> -->
           <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
       </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary commentbutton">Submit</button>
   </form>
 </div>
 
