@@ -3,45 +3,40 @@
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       {{# if user}} {{!--/ Hide mobile navbar --}}
+
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
+
       {{/if}}
       <a class="navbar-brand" href="/"> <img src="/img/Codellab-logo.png"></a>
     </div>
 
-    {{# if user}}
+{{# if user}}
     <!-- Collect the nav links, forms, and other content for toggling -->
-<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-  <form class="navbar-form navbar-left">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-  {{!-- All content that is on the left --}}
-  </form>
-
-  {{!-- All content that is on the right --}}
-  <ul class="nav navbar-nav navbar-right">
-    <!-- <a href="/user/submitproject">Submit Project</a> -->
-
+      <ul class="nav navbar-nav navbar-right">
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          {{user.username}}  <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="/user/submitproject">Submit Project</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="/profile/{{user.username}}">Profile</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="/user/logout">Log out</a></li>
-        </ul>
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              {{user.username}}  <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="/user/submitproject">Submit Project</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/profile/{{user.username}}">Profile</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/user/logout">Log out</a></li>
+          </ul>
       </div>
-  </ul>
-</div>
+      </ul>
+    </div>
 
       {{else}}
-
+      {{!-- Content for logged out users --}}
       {{/if}}
 
     </div><!-- /.navbar-collapse -->

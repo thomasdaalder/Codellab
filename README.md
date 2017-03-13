@@ -6,7 +6,6 @@ Learn, teach, comment, collab or just be inspired by the amazing projects develo
 * Node.js
 * Express.js
 * PostgresQL / Sequelize
-* Passport
 * Bootstrap
 * Handlebars
 

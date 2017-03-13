@@ -34,9 +34,6 @@ Project.belongsTo(User);
 Project.hasMany(Comment);
 Comment.belongsTo(Project);
 
-// User.hasMany(Comment);
-// Comment.belongsTo(User);
-
 // Syncing database and creating base user
 db.sync({
 	force: true,

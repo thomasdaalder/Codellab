@@ -4,7 +4,7 @@ var db = require('../models/db.js');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-// Create clickable link for unique Project links
+// Create clickable link for unique profile links
 router.get('/:username', (req, res) => {
   db.User.findOne({
      where: {
