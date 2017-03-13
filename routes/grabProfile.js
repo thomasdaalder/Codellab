@@ -13,6 +13,8 @@ router.get('/:username', (req, res) => {
      include: [db.Project]
   })
   .then(function (profile) {
+    console.log('profile info')
+    console.log(profile)
     res.render('profile', {
       profile: profile,
   	  user: req.session.user,
