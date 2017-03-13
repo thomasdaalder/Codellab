@@ -5,18 +5,13 @@ var db = require('../models/db.js');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-// Profile Page
-router.get('/', isLoggedIn, function(req, res) {
-	res.render('user/profile', {user: req.session.user});
-});
-
-// Render user signup form
-router.get('/signup', function (req, res) {
+// Render user signup form (GET)
+router.get('/signup', (req, res) => {
   res.render('user/signup');
 });
 
-// Create user to database
-router.post('/signup', function(req, res){
+// Signup user to database (POST)
+router.post('/signup', (req, res) => {
 	// Check if Username already exists
 	db.User.findOne({where: { username: req.body.username }})
 		.then( (user) =>{
@@ -43,13 +38,13 @@ router.post('/signup', function(req, res){
 	})
 });
 
-// GET Login Page
-router.get('/signin', function (req, res) {
+// Login Page (GET)
+router.get('/signin', (req, res) => {
   res.render('user/signin');
 });
 
-// POST Inlog system that checks if user has filled in the correct username or password
-router.post('/signin', bodyParser.urlencoded({extended: true}), function (req, res) {
+// Inlog system that checks if user has filled in the correct username or password (POST)
+router.post('/signin', bodyParser.urlencoded({extended: true}), (req, res) => {
     if(req.body.username.length === 0) {
         res.redirect('/?message=' + encodeURIComponent("Please fill out in your username."));
         return;
@@ -66,7 +61,7 @@ router.post('/signin', bodyParser.urlencoded({extended: true}), function (req, r
     }
   })
   .then (function (user) {
-    bcrypt.compare(req.body.password, user.password, function (err, hash) {
+    bcrypt.compare(req.body.password, user.password, (err, hash) => {
         if (hash === true) {
           req.session.user = user;
           console.log(user);
@@ -80,7 +75,7 @@ router.post('/signin', bodyParser.urlencoded({extended: true}), function (req, r
 });
 
 // Logout user
-router.get('/logout', function (req, res) {
+router.get('/logout', (req, res) => {
   req.session.destroy(function (error) {
     if(error) {
         throw error;
@@ -90,12 +85,12 @@ router.get('/logout', function (req, res) {
 })
 
 // Submit project page (GET)
-router.get('/submitproject', function (req, res) {
+router.get('/submitproject', (req, res) => {
 	res.render('user/submitproject', {user: req.session.user});
 });
 
 // Submit project (POST)
-router.post('/submitproject', function (req, res) {
+router.post('/submitproject', (req, res) => {
   db.User.findOne({
      where: {id: req.session.user.id}
     })

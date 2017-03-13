@@ -4,7 +4,7 @@ var db = require('../models/db.js');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
-// Create clickable link for unique Project links
+// Create clickable link for unique project links
 router.get('/:title', (req, res) => {
   db.Project.findOne({
      where: {
@@ -25,8 +25,6 @@ router.get('/:title', (req, res) => {
 // Post comments on the specific Project
 router.post('/:title', (req, res) => {
   const userSession = req.session.user;
-  console.log('this is userSession')
-  console.log(userSession)
   db.Project.findOne({
     where: {
       title: req.params.title
