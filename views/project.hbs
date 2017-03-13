@@ -14,9 +14,10 @@
 
 <div class="container-fluid">
   <h3>Comments about this project</h3>
-  <p>This is going to be a comment</p>
-  {{!-- Loop through all the comments --}}
-  
+  {{#each Project.comments}}
+    <p><strong>{{this.username}}</strong></p>
+    <p>{{this.comment}}</p>
+  {{/each}}
 </div>
 
 <div class="container-fluid">
