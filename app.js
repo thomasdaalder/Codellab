@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
+var hbsHelpers = require('handlebars-helpers');
+
 var session = require('express-session');
 var flash = require('connect-flash');
 var pg = require('pg');
@@ -14,11 +16,19 @@ var bcrypt = require('bcrypt');
 var index = require('./routes/index');
 var userRoutes = require('./routes/user');
 var project = require('./routes/grabProject');
+var profile = require('./routes/grabProfile');
 
 var app = express();
 
 // view engine setup
-app.engine('.hbs', expressHbs({defaultLayout: 'layout', extname: '.hbs'}) );
+var hbs = expressHbs.create({
+    extname: '.hbs',
+    defaultLayout: 'layout',
+    layoutsDir: './views/layouts',
+    partialsDir: './views/partials',
+    helpers: require('./helpers/helpers.js')
+});
+app.engine('hbs', hbs.engine);
 app.set('view engine', '.hbs');
 
 // uncomment after placing your favicon in /public
@@ -39,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/user', userRoutes);
 app.use('/', index);
 app.use('/project', project);
+app.use('/profile', profile);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -9,28 +9,29 @@
 
 <!-- project card -->
 
-{{!-- Need two for each loops here --}}
-<div class="row">
-
-  {{# each allProjects}}
-<a href='/project/{{this.title}}' class="projectlink">
-  <div class="col-md-4 col-lg-4">
-    <div class="thumbnail-project">
-      <div class="color-block">
-        <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
-        <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
-      <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
-      <div class="caption-project">
-        <h5>{{this.description}}</h5>
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
-        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+<div class="container">
+{{#grouped_each 3 allProjects}}
+    <div class="row">
+    {{#each this }}
+    <a href='/project/{{this.title}}' class="projectlink">
+      <div class="col-md-4 col-lg-4">
+        <div class="thumbnail-project">
+          <div class="color-block">
+            <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
+            <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
+          <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
+          <div class="caption-project">
+            <h5>{{this.description}}</h5>
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
+            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
+            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+          </div>
+        </div>
       </div>
+    </a>
+    {{/each}}
     </div>
-  </div>
-</a>
-{{/each}}
-
+{{/grouped_each}}
 </div>
 
 
