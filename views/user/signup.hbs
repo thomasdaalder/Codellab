@@ -1,18 +1,21 @@
 <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <h1>Sign Up</h1>
+    <div class="col-md-4 col-md-offset-4 signupform">
+        <h1>Create Your Account</h1>
+        <p>
+          This account gives you the possibility to upload projects, give feedback, love or comments on others. It also is the best way to browse through thousands of awesome projects, collaborate on code and get to know future employers/employees!
+        </p>
         <form action="/user/signup" method="post">
             <div class="form-group">
-                <label for="email">E-Mail</label>
-                <input type="text" id="email" name="email" class="form-control" value="john@john.com" required />
+                <!-- <label for="email">E-Mail</label> -->
+                <input type="text" id="email" name="email" class="form-control" placeholder="Email Address*" required />
             </div>
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control" value="john" required/>
+                <!-- <label for="username">Username</label> -->
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username*" required/>
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" class="form-control" value="johnisawesome" required/>
+                <!-- <label for="password">Password</label> -->
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password*" required/>
             </div>
 
             <div class="form-group">
@@ -25,7 +28,14 @@
                 <option>Non Developer</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Sign up</button>
+            <button type="submit" class="btn btn-primary signupbutton">Sign up</button>
+            <div class="github">
+              <h3>Or Sign Up With Your GitHub Account!</h3>
+              <a class="btn btn-block btn-social btn-github">
+               <span class="fa fa-github"></span> Sign up with Github
+             </a>
+
+            </div>
         </form>
     </div>
 </div>

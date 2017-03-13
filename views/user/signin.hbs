@@ -3,14 +3,14 @@
         <h1>Sign In</h1>
         <form action="/user/signin" method="post">
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" class="form-control" value="john" required/>
+                <!-- <label for="username">Username</label> -->
+                <input type="text" id="username" name="username" class="form-control" placeholder="Username" required/>
             </div>
             <div class="form-group">
-                <label for="email">Password</label>
-                <input type="password" id="password" name="password" class="form-control" value="johnisawesome" required/>
+                <!-- <label for="email">Password</label> -->
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required/>
             </div>
-            <button type="submit" class="btn btn-primary">Sign In</button>
+            <button type="submit" class="btn btn-primary signinbutton">Sign In</button>
         </form>
         <br/>
         <p>Don't have an account? <a href="/user/signup">Sign up here!</a></p>
