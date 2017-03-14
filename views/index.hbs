@@ -23,17 +23,23 @@
 {{#grouped_each 3 allProjects}}
     <div class="row">
     {{#each this }}
-    <a href='/project/{{this.title}}' class="projectlink">
+    <a href='/project/{{this.title}}' class="projectlink"></a>
       <div class="col-md-4 col-lg-4">
         <div class="thumbnail-project">
+
           <div class="color-block">
-            <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
-            <h5>Posted by: <a href='/profile/{{this.user.username}}'>{{this.user.username}}</a></h5></a></div>
+            <a href='/project/{{this.title}}'>
+              <h3>{{this.title}}</h3>
+            </a>
+          </div>
+
           <div class="caption-project">
             <h5>{{this.description}}</h5>
-            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
-            <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
-            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
+              <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
+              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+              <hr />
+              <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
           </div>
         </div>
       </div>
