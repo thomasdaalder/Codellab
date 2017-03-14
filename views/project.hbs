@@ -4,7 +4,9 @@
     <div class="thumbnail">
       <div class="color-block">
         <h3>{{Project.title}}</h3>
-        <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
+        <h5>Posted by:
+          <a href="/profile/{{username}}">{{this.user.username}}</a></h5>
+      </div>
       <!-- <img src="/img/profile.jpg" class="" alt="..."> -->
       <div class="caption">
         <h5>{{Project.description}}</h5>
@@ -25,8 +27,9 @@
   <h3>Comments about this project</h3>
 
   {{#each Project.comments}}
-    <p><strong>{{this.username}}</strong></p>
+    <p><strong><a href="/profile/{{username}}" class="comment-username">{{this.username}}</strong></p></a>
     <p>{{this.comment}}</p>
+    <hr class="dividerline">
   {{/each}}
 
 </div>

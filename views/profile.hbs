@@ -1,7 +1,15 @@
-<h1>Profile of {{profile.username}}</h1>
-<h4>Accounttype: {{profile.accounttype}}</h4>
+<img src="/img/coding2.jpg" class="profile-header"></img>
+  <div class="profile">
+    <div class="profile-block">
+      <img class="kitten" src="/img/neo_the_one.jpg"></img>
+      <h1>{{profile.username}}</h1>
+      <h4>{{profile.accounttype}}</h4>
+      <a href={{Project.link}} target="_blank">{{Project.link}}</a>
+    </div>
+  </div>
+<div class="profile-square"></div>
+  <h2 class="projecttext">Projects of {{profile.username}}</h2>
 
-<h2>Projects of {{profile.username}}</h2>
 
     <div class="container">
     {{#grouped_each 3 profile.projects}}
@@ -12,13 +20,12 @@
             <div class="thumbnail-project">
               <div class="color-block">
                 <a href='/project/{{this.title}}'><h3>{{this.title}}</h3></a>
-                <h5>Posted by: <a href='/user'>{{this.user.username}}</h5></a></div>
-              <!-- <img src="/img/profile.jpg" class="img-circle" alt="..."> -->
-              <div class="caption-project">
+                </div>
+                <div class="caption-project">
                 <h5>{{this.description}}</h5>
                 <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
                 <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
-                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
+
               </div>
             </div>
           </div>
