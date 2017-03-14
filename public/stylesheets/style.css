@@ -81,12 +81,6 @@ video#bgvid {
   margin: 15px;
 }
 /*navbar*/
-.navbar-default {
-     background-color:transparent!important;
-     border-color:transparent!important;
-     background-image:none!important;
-     box-shadow:none!important;
-}
 
 .navbar-default{
      background-color:#282C34!important;
