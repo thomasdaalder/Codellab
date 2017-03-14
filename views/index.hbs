@@ -2,7 +2,7 @@
 
     {{!-- Homepage for signed in users --}}
 
-<img src="/img/luis-llerena-14779.jpg" class="headerimage"></img>
+<img src="/img/coding.jpg" class="headerimage"></img>
 <div class="wrap">
     <div class="type-wrap">
         <div id="typed-strings">
@@ -10,36 +10,6 @@
         </div>
         <span id="typed" style="white-space:pre;"></span>
     </div>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function(){
-
-        Typed.new("#typed", {
-            stringsElement: document.getElementById('typed-strings'),
-            typeSpeed: 30,
-            backDelay: 500,
-            loop: false,
-            contentType: 'html', // or text
-            // defaults to null for infinite loop
-            loopCount: null,
-            callback: function(){ foo(); },
-            resetCallback: function() { newTyped(); }
-        });
-
-        var resetElement = document.querySelector('.reset');
-        if(resetElement) {
-            resetElement.addEventListener('click', function() {
-                document.getElementById('typed')._typed.reset();
-            });
-        }
-
-    });
-
-    function newTyped(){ /* A new typed object */ }
-
-    function foo(){ console.log("Callback"); }
-
-    </script>
 
 
 <!-- end of jquery animation -->
