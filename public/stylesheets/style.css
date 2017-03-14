@@ -26,7 +26,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: rgb(242, 242, 242);
+  background-color: #F4F4F4;
 }
 
 a {
@@ -36,6 +36,11 @@ a {
 h1{
   font-weight: 300;
 }
+
+.dividerline{
+  border-color: #596d82;
+}
+
 
 /*video*/
 video#bgvid {
@@ -81,20 +86,12 @@ video#bgvid {
   margin: 15px;
 }
 /*navbar*/
-.navbar-default {
-     background-color:transparent!important;
-     border-color:transparent!important;
-     background-image:none!important;
-     box-shadow:none!important;
-}
-
 .navbar-default{
      background-color:#282C34!important;
      border-color:#282C34!important;
      background-image:none!important;
      box-shadow:none!important;
      border-radius:0!important;
-
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -124,32 +121,34 @@ video#bgvid {
 /*Grey bar beneath navbar*/
 .square {
 	width: 100%;
-	height: 100px;
-	background-color: #282C34;
+	height: 40px;
+	background-color: #00FF94;
   padding-top: -15px;
   margin-top: -20px;
   text-align: center;
 }
 
-.square h3{
+.square-text{
   padding-left: 20px;
   padding-top: 20px;
   font-weight: 700;
   margin: 0;
-  color: white;
+  color:#717b85;
+  text-align: center;
 }
 
 .para{
-  padding-left: 20px;
+  text-align: center;
   font-weight: 300;
   font-size: 20px;
-  color: white;
-  padding-top: 10px;
+  color:#717b85;
+  margin:0;
 }
 
 .upload{
   display: grid;
 }
+
 /*Project cards*/
 
 
@@ -438,8 +437,14 @@ video#bgvid {
   background-color: #00FF94;
 }
 
+/*comment section*/
+
+.comment-username{
+  color: #596d82;
+}
+
 .commentbutton{
-  background-color:#00FF94;
+  background-color:#596d82;
   border-color: transparent!important;
   margin-bottom: 50px;
 }
@@ -455,3 +460,55 @@ video#bgvid {
 .container-fluid p{
   color: #596d82;
 }
+
+/*profile*/
+
+.kitten{
+  border-radius: 50%;
+  max-width: 100px;
+  max-height: 100px;
+}
+.profile-square{
+  width: 100%;
+	height: 40px;
+	background-color: #00FF94;
+  text-align: center;
+}
+
+.profile-block{
+  width: 250px;
+	height: 250px;
+	background-color: #F4F4F4;
+  text-align: center;
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 30px;
+
+}
+
+.projecttext{
+  text-align: center;
+  color: #596d82;
+}
+
+.profile{
+  text-align: center;
+  position: absolute;
+  top: 200px;
+  text-align: center;
+  width: 100%;
+  font-size: 40px;
+  color: #596d82;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+
+.profile-header{
+   width:100%;
+   height:100%;
+   margin:0 auto;
+   margin-top:-20px;
+ }
