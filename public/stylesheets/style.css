@@ -253,7 +253,7 @@ video#bgvid {
 }
 
 .caption-project{
-  min-height: 170px;
+  /*min-height: 170px;*/
 }
 
 .block-color{
@@ -272,7 +272,7 @@ video#bgvid {
 .sterlike:before{
   color: #F8E81C;
   font-size: 25px;
-  padding-left: 130px;
+  padding-left: 100px;
   text-decoration: none;
 }
 
@@ -385,7 +385,7 @@ video#bgvid {
 .likebutton{
   background-color: white;
   border-color: transparent;
-  
+
 }
 
 .project-block{
@@ -407,7 +407,7 @@ video#bgvid {
 }
 
 .thumbnail .project-block{
-  text-align: left;
+  text-align: center;
 }
 .row{
   margin:0;
