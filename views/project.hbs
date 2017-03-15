@@ -4,20 +4,26 @@
     <div class="thumbnail">
       <div class="color-block">
         <h3>{{Project.title}}</h3>
-        <h5>Posted by:
-          <a href="/profile/{{username}}">{{this.user.username}}</a></h5>
       </div>
-      <!-- <img src="/img/profile.jpg" class="" alt="..."> -->
+      <h4>What I'm looking for:</h4>
+      <h4>{{Project.question}}</h4>
+
       <div class="caption">
         <h5>{{Project.description}}</h5>
-        <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{Project.likes}}
-        <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{Project.language}}
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
-        <span class="fa fa-github" aria-hidden="true"></span><a href={{Project.link}} target="_blank">{{Project.link}}</a>
-        <p>{{Project.question}}</p>
-        <button type="button" class="btn btn-default btn-sm">
-          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
-        </button>
+
+        <div class="project-block">
+          <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
+
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span><a>{{Project.likes}}</a>
+          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span><a>{{Project.language}}</a>
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a>{{this.user.accounttype}}</a>
+          <span class="fa fa-github" aria-hidden="true"></span><a href={{Project.link}} target="_blank">{{Project.link}}</a>
+
+          <button type="button" class="btn btn-default btn-sm likebutton">
+            <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Give me a star!
+          </button>
+        </div>
+
 
       </div>
     </div>

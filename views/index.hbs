@@ -35,13 +35,14 @@
 
           <div class="caption-project">
             <h5>{{this.description}}</h5>
-            <div class="dingen">
-              <span class="glyphicon glyphicon-star" aria-hidden="true"></span> {{this.likes}}
-              <span class="glyphicon glyphicon-tag" aria-hidden="true"></span>{{this.language}}
-              <span class="glyphicon glyphicon-user" aria-hidden="true"></span>{{this.user.accounttype}}
-              <hr />
-              <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
-            </div>
+
+          <div class="dingen">
+          </div>
+          <div class="block-color">
+            <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
+            <a class="glyphicon glyphicon-star sterlike" aria-hidden="true"></a>
+            <a class="likes">{{this.likes}}</a>
+          </div>
           </div>
         </div>
       </div>
