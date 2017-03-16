@@ -7,7 +7,7 @@ var session = require('express-session');
 
 // Render user signup form (GET)
 router.get('/signup', (req, res) => {
-  res.render('user/signup');
+  res.render('user/signup', {message: req.flash('usernameTaken')} );
 });
 
 // Signup user to database (POST)
@@ -15,10 +15,11 @@ router.post('/signup', (req, res) => {
 	// Check if Username already exists
 	db.User.findOne({where: { username: req.body.username }})
 		.then( (user) =>{
+      // If username already exists
 			if (user){
-				res.redirect('/register?message=' + encodeURIComponent("Username already exists"));
-				// Put alert that username already exist
-			}
+          req.flash('usernameTaken', 'Username already exists');
+          res.redirect('/user/signup');
+          }
 			else {
 
 				var password = req.body.password
@@ -30,8 +31,8 @@ router.post('/signup', (req, res) => {
           accounttype: req.body.accounttype
 				})
 				.then( ()=>{
-					res.redirect('/');
-					// Alert that user registered worked
+          // req.flash('successRegister', 'Account succesfully registered, you can now sign in');
+					res.redirect('/user/signin');
 					})
 				})
 			}
@@ -40,19 +41,20 @@ router.post('/signup', (req, res) => {
 
 // Login Page (GET)
 router.get('/signin', (req, res) => {
-  res.render('user/signin');
+  res.render('user/signin', {message: req.flash('signinPasswordIncomplete'),
+  invalidInfo: req.flash('invalidInfo')});
 });
 
 // Inlog system that checks if user has filled in the correct username or password (POST)
 router.post('/signin', bodyParser.urlencoded({extended: true}), (req, res) => {
     if(req.body.username.length === 0) {
-        res.redirect('/?message=' + encodeURIComponent("Please fill out in your username."));
-        return;
+        req.flash('signinUserIncomplete', 'Please fill in your username.');
+        res.redirect('/user/signin');
     }
 
     if(req.body.password.length === 0) {
-       res.redirect('/?message=' + encodeURIComponent("Please fill out your password."));
-       return;
+        req.flash('signinPasswordIncomplete', 'Please fill out your password.');
+        res.redirect('/user/signin');
    }
 
    db.User.findOne({
@@ -68,7 +70,10 @@ router.post('/signin', bodyParser.urlencoded({extended: true}), (req, res) => {
           res.redirect('/');
         }
         else {
-          res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
+          // res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
+          // Redirect and flash message if info isnt correct
+          req.flash('invalidInfo', 'Invalid email or password.');
+          res.redirect('/user/signin');
         }
     });
   });
@@ -80,33 +85,47 @@ router.get('/logout', (req, res) => {
     if(error) {
         throw error;
     }
-      res.redirect( '/?message=' + encodeURIComponent("Succesfully logged out.") );
+      res.redirect('/');
   })
 })
 
 // Submit project page (GET)
 router.get('/submitproject', (req, res) => {
-	res.render('user/submitproject', {user: req.session.user});
+	res.render('user/submitproject', {user: req.session.user,
+  doubleProject: req.flash('doubleProject')});
 });
 
 // Submit project (POST)
 router.post('/submitproject', (req, res) => {
-  db.User.findOne({
-     where: {id: req.session.user.id}
-    })
-  .then(function(user) {
-    return user.createProject({
-        title: req.body.title,
-        link: req.body.link,
-        description: req.body.description,
-				question: req.body.question,
-				language: req.body.language,
-				likes: 0
-    })
+// Find if the project name already exist
+  db.Project.findOne({
+    where: {
+        title: req.body.title
+    }
   })
-  .then(function() {
-    res.redirect('/');
-  });
+  .then(function(project) {
+    if (project.title === req.body.title) {
+      req.flash('doubleProject', 'Project name already exists, please choose a new one.');
+      res.redirect('/user/submitproject')
+    } else {
+      db.User.findOne({
+         where: {id: req.session.user.id}
+        })
+      .then(function(user) {
+        return user.createProject({
+            title: req.body.title,
+            link: req.body.link,
+            description: req.body.description,
+            question: req.body.question,
+            language: req.body.language,
+            likes: 0
+        })
+      })
+      .then(function() {
+        res.redirect('/');
+      });
+    }
+  })
 });
 
 module.exports = router;

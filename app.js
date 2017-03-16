@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var expressHbs = require('express-handlebars');
 var hbsHelpers = require('handlebars-helpers');
 var session = require('express-session');
+var validator = require('express-validator');
 var flash = require('connect-flash');
 var pg = require('pg');
 var db = require(__dirname + '/models/db.js');
@@ -36,6 +37,7 @@ app.set('view engine', '.hbs');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(validator());
 app.use(cookieParser());
 app.use(session(
   {secret: 'thisisasupersecretkey',
