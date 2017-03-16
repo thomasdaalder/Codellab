@@ -177,11 +177,6 @@ video#bgvid {
   color: white;
 }
 
-.thumbnail-project a{
-  text-decoration: none;
-  font-weight: bold;
-  color: #717b85;
-}
 
 .projectlink {
   display: block;
@@ -189,11 +184,12 @@ video#bgvid {
 }
 
 .profiel-link{
-  color: #00FF94!important;
+  color: white!important;
   padding-left: 10px;
   padding-top: 10px;
   margin-top: 10px;
-  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
 }
 
 .profiel-link:hover{
@@ -201,7 +197,16 @@ video#bgvid {
   padding-left: 10px;
   padding-top: 10px;
   margin-top: 10px;
-  text-align: center;
+  text-decoration: none;
+
+}
+
+.thumbnail-project a{
+  text-decoration: none;
+}
+
+.thumbnail .caption{
+  padding: 0;
 }
 
 .thumbnail-project h3{
@@ -218,6 +223,7 @@ video#bgvid {
 }
 
 .thumbnail-project h5{
+
   margin: 10px;
   display: block;
   display: -webkit-box;
@@ -243,22 +249,51 @@ video#bgvid {
   font-weight: 300;
   font-size: 20px;
   color: #717b85;
+  margin-top: 20px;
 }
 
 .caption-project{
-  padding-bottom: 5px;
-  min-height: 170px;
-}
-.dingen{
-  position:absolute;
-   bottom:0;
-   padding-bottom: 50px;
-   color: #717b85;
+  /*min-height: 170px;*/
 }
 
-hr{
-  margin-top: 0px;
-  margin-bottom: 5px;
+.block-color{
+  width: inherit;
+  height: 50px;
+  background-color:#00FF94;
+  border-radius: 0px 0px 5px 5px;
+  bottom:0;
+  margin-top: 56px;
+}
+
+.block-color a{
+  padding-top: 10px;
+}
+
+.sterlike:before{
+  color: #F8E81C;
+  font-size: 25px;
+  padding-left: 100px;
+  text-decoration: none;
+}
+
+.sterlike:hover{
+  text-decoration: none;
+}
+
+.likes{
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 20px;
+
+}
+
+.likes:hover{
+  margin: 0;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .glyphicon{
@@ -347,6 +382,20 @@ hr{
 }
 /*project page*/
 
+.likebutton{
+  background-color: white;
+  border-color: transparent;
+
+}
+
+.project-block{
+  width: inherit;
+  height: 50px;
+  background-color:#00FF94;
+  border-radius: 0px 0px 5px 5px;
+  bottom:0;
+}
+
 .thumbnail{
   border-radius: 5px 5px 4px 4px;
   border-color: transparent!important;
@@ -355,8 +404,10 @@ hr{
   padding: 0;
   border: 0;
   text-align: center;
+}
 
-
+.thumbnail .project-block{
+  text-align: center;
 }
 .row{
   margin:0;
@@ -375,10 +426,9 @@ hr{
 }
 
 .thumbnail a{
-  color: black;
   text-decoration: none;
   font-weight: bold;
-  color: #717b85;
+  color: white;
 }
 
 .projectlink {
@@ -413,8 +463,12 @@ hr{
 
 .thumbnail span{
   margin: 10px;
+  color: white;
 }
 
+.glyphicon-star{
+  color: #F8E81C;
+}
 .caption h5 {
   font-weight: 300;
   font-size: 20px;
