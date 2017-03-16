@@ -236,11 +236,6 @@ video#bgvid {
   text-overflow: ellipsis;
 }
 
-.thumbnail-project h5{
-  font-size: 11px;
-
-}
-
 .thumbnail-project span{
   margin: 10px;
 }
