@@ -45,8 +45,8 @@ h1{
 /*video*/
 video#bgvid {
     position: fixed;
-    top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     min-width: 100%;
     min-height: 100%;
     width: auto;
@@ -228,7 +228,7 @@ video#bgvid {
   display: block;
   display: -webkit-box;
   max-width: 400px;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -242,7 +242,7 @@ video#bgvid {
 
 .caption-project h5 {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 15px;
   color: #717b85;
   margin-top: 20px;
 }
@@ -506,7 +506,6 @@ video#bgvid {
   font-size: 20px;
 }
 
-/*signup button */
 
 .signupbutton{
   text-align: center;
@@ -514,9 +513,12 @@ video#bgvid {
   border-color: transparent!important;
   margin-left: 160px;
 }
-
 .signupbutton:hover{
   background-color: #00FF94;
+}
+
+.signin-text{
+  text-align: center;
 }
 
 /*signin button*/
