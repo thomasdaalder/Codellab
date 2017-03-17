@@ -104,10 +104,7 @@ router.post('/submitproject', (req, res) => {
     }
   })
   .then(function(project) {
-    if (project.title === req.body.title) {
-      req.flash('doubleProject', 'Project name already exists, please choose a new one.');
-      res.redirect('/user/submitproject')
-    } else {
+    if (project === null) {
       db.User.findOne({
          where: {id: req.session.user.id}
         })
@@ -124,8 +121,11 @@ router.post('/submitproject', (req, res) => {
       .then(function() {
         res.redirect('/');
       });
+    } else {
+      req.flash('doubleProject', 'Project name already exists, please choose a new one.');
+      res.redirect('/user/submitproject')
     }
-  })
+  });
 });
 
 module.exports = router;
