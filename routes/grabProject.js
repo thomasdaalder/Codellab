@@ -10,9 +10,11 @@ router.get('/:title', (req, res) => {
      where: {
          title: req.params.title
      },
-     include: [db.Comment]
+     include: [db.User, db.Comment]
   })
   .then(function (Project) {
+    console.log('project include')
+    console.log(Project)
     res.render('project', {
       Project: Project,
   	  user: req.session.user,
