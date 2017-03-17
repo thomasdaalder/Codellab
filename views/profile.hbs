@@ -11,30 +11,29 @@
   <h2 class="projecttext">Projects of {{profile.username}}</h2>
 
   <div class="container">
-  {{#grouped_each 3 profile.projects}}
-      <div class="row">
-      {{#each this }}
-      <a href='/project/{{this.title}}' class="projectlink"></a>
-        <div class="col-md-4 col-lg-4">
-          <div class="thumbnail-project">
-            <div class="color-block">
-              <a href='/project/{{this.title}}'>
-                <h3>{{this.title}}</h3>
-              </a>
+      {{!-- Loop through the projects of user --}}
+      {{#grouped_each 3 profile.projects}}
+          <div class="row">
+          {{#each this }}
+          <a href='/project/{{this.title}}' class="projectlink"></a>
+            <div class="col-md-4 col-lg-4">
+              <div class="thumbnail-project">
+                <div class="color-block">
+                  <a href='/project/{{this.title}}'>
+                    <h3>{{this.title}}</h3>
+                  </a>
+                </div>
+                <div class="caption-project">
+                  <h5>{{this.description}}</h5>
+                <div class="dingen">
+                </div>
+                <div class="block-color">
+                </div>
+                </div>
+              </div>
             </div>
-            <div class="caption-project">
-              <h5>{{this.description}}</h5>
-            <div class="dingen">
-            </div>
-            <div class="block-color">
-            </div>
-            </div>
+          </a>
+          {{/each}}
           </div>
-        </div>
-      </a>
-      {{/each}}
-      </div>
-  {{/grouped_each}}
+      {{/grouped_each}}
   </div>
-
-{{!-- Loop through the projects of user --}}

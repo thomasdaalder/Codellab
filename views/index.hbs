@@ -1,7 +1,6 @@
 {{# if user}}
 
     {{!-- Homepage for signed in users --}}
-
 <img src="/img/coding.jpg" class="headerimage"></img>
 <div class="wrap">
     <div class="type-wrap">
@@ -17,7 +16,6 @@
 <div class="square"></div>
 <h3 class="square-text">Browse thousands of amazing projects</h3>
 <p class="para">Check out the projects below and give feedback, love, help or inspiration.</p>
-<!-- project card -->
 
 <div class="container">
 {{#grouped_each 3 allProjects}}
@@ -36,13 +34,9 @@
           <div class="caption-project">
             <h5>{{this.description}}</h5>
 
-          <div class="dingen">
-          </div>
-          <div class="block-color">
-            <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
-            <!-- <a class="glyphicon glyphicon-star sterlike" aria-hidden="true"></a> -->
-            <!-- <a class="likes">{{this.likes}}</a> -->
-          </div>
+            <div class="block-color">
+              <a href='/profile/{{this.user.username}}'class="profiel-link">{{this.user.username}}</a>
+            </div>
           </div>
         </div>
       </div>

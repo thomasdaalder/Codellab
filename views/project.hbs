@@ -1,53 +1,45 @@
 {{#if user}}
+
 <a href='/project/{{this.title}}' class="projectlink"></a>
   <div class="col-md-12 col-lg-12 project">
     <div class="thumbnail">
-      <div class="color-block">
-        <h3>{{Project.title}}</h3>
-      </div>
-      <h4>What I'm looking for:</h4>
-      <h4>{{Project.question}}</h4>
-
-      <div class="caption">
-        <h5>{{Project.description}}</h5>
-
-        <div class="project-block">
-          <a href='/profile/{{Project.user.username}}'class="profiel-link">{{Project.user.username}}</a>
-
-          <!-- <span class="glyphicon glyphicon-star" aria-hidden="true"></span><a>{{Project.likes}}</a> -->
-          <span class="glyphicon glyphicon-tag" aria-hidden="true"></span><a>{{Project.language}}</a>
-          <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a>{{this.user.accounttype}}</a>
-          <span class="fa fa-github" aria-hidden="true"></span><a href={{Project.link}} target="_blank">{{Project.link}}</a>
-
+          <div class="color-block">
+            <h3>{{Project.title}}</h3>
           </div>
-        </div>
+          <h4>What I'm looking for:</h4>
+          <h4>{{Project.question}}</h4>
 
+          <div class="caption">
+              <h5>{{Project.description}}</h5>
+              <div class="project-block">
+                <a href='/profile/{{Project.user.username}}'class="profiel-link">{{Project.user.username}}</a>
 
+                <span class="glyphicon glyphicon-tag" aria-hidden="true"></span><a>{{Project.language}}</a>
+                <span class="glyphicon glyphicon-user" aria-hidden="true"></span><a>{{this.user.accounttype}}</a>
+                <span class="fa fa-github" aria-hidden="true"></span><a href={{Project.link}} target="_blank">{{Project.link}}</a>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
 
 <div class="container-fluid">
-  <h3>Comments about this project</h3>
+    <h3>Comments about this project</h3>
 
-  {{#each Project.comments}}
-    <p><strong><a href="/profile/{{username}}" class="comment-username">{{this.username}}</strong></p></a>
-    <p>{{this.comment}}</p>
-    <hr class="dividerline">
-  {{/each}}
-
+    {{#each Project.comments}}
+        <p><strong><a href="/profile/{{username}}" class="comment-username">{{this.username}}</strong></p></a>
+        <p>{{this.comment}}</p>
+        <hr class="dividerline">
+    {{/each}}
 </div>
 
 <div class="container-fluid">
-  <h3>Leave a comment</h3>
-  <!-- <p>Logged in as: <strong>{{user.username}}</strong></p> -->
-  <form action="/project/{{paramsID}}" method="post">
-      <div class="form-group">
-          <!-- <label for="comment">Comment</label> -->
-          <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
-      </div>
-    <button type="submit" class="btn btn-primary commentbutton">Submit</button>
-  </form>
+    <h3>Leave a comment</h3>
+    <form action="/project/{{paramsID}}" method="post">
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="comment" name="comment" required></textarea>
+        </div>
+      <button type="submit" class="btn btn-primary commentbutton">Submit</button>
+    </form>
 </div>
 
 {{/if}}
