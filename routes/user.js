@@ -63,19 +63,25 @@ router.post('/signin', bodyParser.urlencoded({extended: true}), (req, res) => {
     }
   })
   .then (function (user) {
-    bcrypt.compare(req.body.password, user.password, (err, hash) => {
-        if (hash === true) {
-          req.session.user = user;
-          console.log(user);
-          res.redirect('/');
-        }
-        else {
-          // res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
-          // Redirect and flash message if info isnt correct
-          req.flash('invalidInfo', 'Invalid email or password.');
-          res.redirect('/user/signin');
-        }
-    });
+    if (user === null) {
+      req.flash('invalidInfo', 'Invalid username or password.');
+      res.redirect('/user/signin');
+    }
+    else {
+      bcrypt.compare(req.body.password, user.password, (err, hash) => {
+          if (hash === true) {
+            req.session.user = user;
+            console.log(user);
+            res.redirect('/');
+          }
+          else {
+            // res.redirect('/?message=' + encodeURIComponent("Invalid email or password."));
+            // Redirect and flash message if info isnt correct
+            req.flash('invalidInfo', 'Invalid username or password.');
+            res.redirect('/user/signin');
+          }
+      });
+    }
   });
 });
 
